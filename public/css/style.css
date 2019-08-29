@@ -1,0 +1,16 @@
+body{
+
+}
+.video-image{
+width: 210px!important;
+height: 118px!important;
+}
+.video-tittle{
+font-size: 2rem!important;
+text-transform: uppercase;
+text-decoration: none!important;
+}
+.video-tittle a{
+color: black!important;
+}
+                                               

@@ -59,3 +59,31 @@ Route::post('/comment', array(
     'as' => 'comment',
     'uses' => 'CommentController@store'
 ));
+//eliminar comentario
+Route::get('/delete-comment/{comment_id}', array(
+    'as' => 'commentDelete',
+    'middleware' => 'auth',
+    'uses' => 'CommentController@delete'
+));
+
+//eliminar video
+Route::get('/delete-video/{video_id}', array(
+    'as' => 'videoDelete',
+    'middleware' => 'auth',
+    'uses' => 'VideoController@delete'
+));
+
+
+//editar cideo
+Route::get('/editar-video/{video_id}', array(
+    'as' => 'videoEdit',
+    'middleware' => 'auth',
+    'uses' => 'VideoController@edit'
+));
+
+//Rutas del controlador de video 
+Route::post('/update-video/{video_id}', array(
+    'as' => 'updateVideo',
+    'middleware' => 'auth',
+    'uses' => 'VideoController@update'
+));

@@ -28,4 +28,16 @@ class CommentController extends Controller
             'message'=>'El comentario se agrego exitosamente'
         ));
     }
+
+    public function delete($comment_id){
+        $user = \Auth::user();
+        $comment = Comment::find($comment_id);
+
+        if($user && ($comment->user_id == $user->id || $comment->vodeo->user == $uses->id)){
+            $comment->delete();
+        }
+        return redirect()->route('detailVideo', ['video_id' => $comment->video_id])->with(array(
+            'message'=>'Comentario borrado'
+        ));
+    }
 }
